@@ -1,0 +1,7 @@
+# Ignorar archivos y carpetas generados automáticamente por Python
+__pycache__/
+*.pyc
+
+# Opcional: ignorar configuraciones locales
+.vscode/
+.env
