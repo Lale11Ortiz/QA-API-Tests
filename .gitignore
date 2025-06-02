@@ -5,3 +5,7 @@ __pycache__/
 # Opcional: ignorar configuraciones locales
 .vscode/
 .env
+
+# Carpetas de reportes generadas por Allure
+allure-results/
+allure-report/
