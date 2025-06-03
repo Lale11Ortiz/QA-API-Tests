@@ -1,28 +1,27 @@
-##🧪 QA-API-Tests
-Repositorio de pruebas manuales y automatizadas sobre la API pública JSONPlaceholder.
+## 🧪 QA-API-Tests
+Repositorio de pruebas manuales y automatizadas sobre la API pública [JSONPlaceholder](https://jsonplaceholder.typicode.com)
 
 ---
 
-##📁 Estructura del proyecto
+## 📁 Estructura del proyecto
 
 QA-API-Tests/
-│
-├── 📂 Automation
-│   ├── test_api_jsonplaceholder.py                 # Tests automatizados con `unittest`
-│   ├── 📂 pytest_tests
-│   │   ├── test_jsonplaceholder_pytest.py         # Tests con `pytest`
-│   │   └── conftest.py                            # Fixture compartida
-│
-├── 📂 Manual-API-TestCases
-│   ├── QA-API-TestCases_JSONPlaceholder.xlsx      # Casos de prueba manuales
-│   └── QA-API-TestCasesxlsx                       # Casos de prueba manuales
-│
-├── .gitignore                                     # Ignora archivos temporales, Allure, etc.
-├── README.md                                      # Este archivo
+- 📂 Automation
+  - test_api_jsonplaceholder.py                 # Tests automatizados con `unittest`
+   - 📂 pytest_tests
+      - test_jsonplaceholder_pytest.py         # Tests con `pytest`
+      - conftest.py                            # Fixture compartida
+
+- 📂 Manual-API-TestCases
+  - QA-API-TestCases_JSONPlaceholder.xlsx      # Casos de prueba manuales
+   - QA-API-TestCasesxlsx                       # Casos de prueba manuales
+
+- .gitignore                                     # Ignora archivos temporales, Allure, etc.
+- README.md                                      # Este archivo
 
 ---
 
-##🧪 Tests Automatizados
+## 🧪 Tests Automatizados
 
 ✔️ Herramientas utilizadas:
 - Python 3.13
@@ -34,7 +33,7 @@ QA-API-Tests/
 
 ---
 
-##📋 Tests cubiertos (JSONPlaceholder API):
+## 📋 Tests cubiertos (JSONPlaceholder API):
 
 | ID | Método | Endpoint                                       | Estado |
 |----|--------|------------------------------------------------|--------|
@@ -49,18 +48,18 @@ Todos los tests fueron implementados con `unittest` y duplicados con `pytest` pa
 
 ---
 
-##📊 Reportes con Allure
+## 📊 Reportes con Allure
 
 Se utilizó `pytest + allure-pytest` para generar reportes detallados ejecutando:
 
-```bash
 pytest Automation/pytest_tests/test_jsonplaceholder_pytest.py --alluredir=allure-results
 allure serve allure-results
+
 El comando abre automáticamente el reporte HTML local en el navegador.
 
 ---
 
-##🔁 CI/CD con GitHub Actions
+## 🔁 CI/CD con GitHub Actions
 El proyecto cuenta con un flujo de trabajo CI básico para ejecutar los tests automáticamente:
 
 `.github/workflows/python-ci.yml`
@@ -72,7 +71,7 @@ El proyecto cuenta con un flujo de trabajo CI básico para ejecutar los tests au
 
 ---
 
-##✍️🏽 Objetivo
+## ✍️🏽 Objetivo
 
 Practicar de forma profesional la validación de APIs REST tanto en pruebas manuales como automatizadas, consolidando experiencia en:
 - Gestión de ramas (`Git`)
