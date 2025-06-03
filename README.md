@@ -51,9 +51,10 @@ Todos los tests fueron implementados con `unittest` y duplicados con `pytest` pa
 ## 📊 Reportes con Allure
 
 Se utilizó `pytest + allure-pytest` para generar reportes detallados ejecutando:
-
-pytest Automation/pytest_tests/test_jsonplaceholder_pytest.py --alluredir=allure-results
+```bash
+Automation/pytest_tests/test_jsonplaceholder_pytest.py --alluredir=allure-results
 allure serve allure-results
+```
 
 El comando abre automáticamente el reporte HTML local en el navegador.
 
