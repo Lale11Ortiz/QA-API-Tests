@@ -1,66 +1,81 @@
-# 🧪 QA-API-Tests
-
+##🧪 QA-API-Tests
 Repositorio de pruebas manuales y automatizadas sobre la API pública JSONPlaceholder.
 
 ---
 
-## 📂 Estructura del proyecto
+##📁 Estructura del proyecto
 
 QA-API-Tests/
-- Automation/
-    - test_api_jsonplaceholder.py ✅
-    - __init__.py
-- Manual-API-TestCases/
-    - QA-API-TestCases.xlsx
-    - QA-API-TestCases_JSONPlaceholder.xlsx
-- .gitignore
-- README.md
+│
+├── 📂 Automation
+│   ├── test_api_jsonplaceholder.py                 # Tests automatizados con `unittest`
+│   ├── 📂 pytest_tests
+│   │   ├── test_jsonplaceholder_pytest.py         # Tests con `pytest`
+│   │   └── conftest.py                            # Fixture compartida
+│
+├── 📂 Manual-API-TestCases
+│   ├── QA-API-TestCases_JSONPlaceholder.xlsx      # Casos de prueba manuales
+│   └── QA-API-TestCasesxlsx                       # Casos de prueba manuales
+│
+├── .gitignore                                     # Ignora archivos temporales, Allure, etc.
+├── README.md                                      # Este archivo
 
 ---
 
-## 🧰 Herramientas utilizadas
+##🧪 Tests Automatizados
 
-- Postman (pruebas manuales)
-- Python + Unittest (automatización)
-- API pública: [JSONPlaceholder](https://jsonplaceholder.typicode.com/)
-- Git + GitHub
-
----
-
-## 📌 Descripción de los tests automatizados
-
-Los siguientes métodos fueron validados contra JSONPlaceholder usando `unittest`:
-
-| Test ID | Método | Endpoint                                       | Estado esperado | Estado real | Estado |
-|---------|--------|------------------------------------------------|------------------|-------------|--------|
-| 1       | GET    | `/posts`                                       | 200              | 200         | ✅     |
-| 2       | GET    | `/posts/1`                                     | 200              | 200         | ✅     |
-| 3       | POST   | `/posts`                                       | 201              | 201         | ✅     |
-| 4       | PUT    | `/posts/1`                                     | 200              | 200         | ✅     |
-| 5       | PATCH  | `/posts/1`                                     | 200              | 200         | ✅     |
-| 6       | DELETE | `/posts/1`                                     | 200              | 200         | ✅     |
+✔️ Herramientas utilizadas:
+- Python 3.13
+- `unittest`
+- `pytest`
+- `requests`
+- `Allure` para reporting
+- `GitHub Actions` para CI/CD
 
 ---
 
-## 📊 Casos de prueba manuales
+##📋 Tests cubiertos (JSONPlaceholder API):
 
-🗂️ Archivo: `QA-API-TestCases_JSONPlaceholder.xlsx`  
-Contiene los mismos 6 tests validados manualmente con Postman antes de su automatización. Incluye:
+| ID | Método | Endpoint                                       | Estado |
+|----|--------|------------------------------------------------|--------|
+| 1  | GET    | `/posts`                                       | ✅     |
+| 2  | GET    | `/posts/1`                                     | ✅     |
+| 3  | POST   | `/posts`                                       | ✅     |
+| 4  | PUT    | `/posts/1`                                     | ✅     |
+| 5  | PATCH  | `/posts/1`                                     | ✅     |
+| 6  | DELETE | `/posts/1`                                     | ✅     |
 
-- Métodos: GET, POST, PUT, PATCH, DELETE
-- Estructura organizada con campos: ID, Método, Endpoint, Body, Resultado Esperado, Resultado Real, Estado
-
----
-
-## 🚀 Estado del proyecto
-
-✅ Etapa finalizada  
-🧩 Tests API manuales + automatizados completos  
-📁 Estructura organizada para futuros proyectos y CI/CD
+Todos los tests fueron implementados con `unittest` y duplicados con `pytest` para práctica avanzada y generación de reportes con Allure.
 
 ---
 
-## 📌 Próximo paso: CI/CD + GitHub Actions
-El siguiente arco de la temporada 3 consistirá en crear un repositorio independiente para automatizar la ejecución de tests en cada push.
+##📊 Reportes con Allure
+
+Se utilizó `pytest + allure-pytest` para generar reportes detallados ejecutando:
+
+```bash
+pytest Automation/pytest_tests/test_jsonplaceholder_pytest.py --alluredir=allure-results
+allure serve allure-results
+El comando abre automáticamente el reporte HTML local en el navegador.
 
 ---
+
+##🔁 CI/CD con GitHub Actions
+El proyecto cuenta con un flujo de trabajo CI básico para ejecutar los tests automáticamente:
+
+`.github/workflows/python-ci.yml`
+
+- Corre en cada push y PR
+- Verifica dependencias
+- Ejecuta `unittest`
+- Integra validación de calidad de código con `flake8`
+
+---
+
+##✍️🏽 Objetivo
+
+Practicar de forma profesional la validación de APIs REST tanto en pruebas manuales como automatizadas, consolidando experiencia en:
+- Gestión de ramas (`Git`)
+- Buenas prácticas de estructuración de proyectos
+- Automatización avanzada
+- CI/CD y reportes
